@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - study@localhost" uuid="ac4dd513-ca62-454f-b33c-02e322ce4e8d">
+    <database-info product="MySQL" version="5.6.23-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="study"/>
+    <table name="employees" schema="" catalog="study" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="shop" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="img" sqlType="VARCHAR" precision="1000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date_of_birth" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK9BDB69A0559A2434" columns="shop" ref-table="shops" ref-schema="" ref-catalog="study" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="shop" columns="shop" ref-table="shops" ref-schema="" ref-catalog="study" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="FK9BDB69A0559A2434" unique="false" columns="shop"/>
+      <index name="shop_idx" unique="false" columns="shop"/>
+    </table>
+    <table name="en_words" schema="" catalog="study" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="value" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="translation" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="inSequence" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <column name="learned" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <column name="correctAnswers" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <column name="wrongAnswers" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <column name="user" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="value_UNIQUE" unique="true" columns="value"/>
+    </table>
+    <table name="shops" schema="" catalog="study" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="tel" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="working_time" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK9BDB69A0559A2434" table="employees" schema="" catalog="study" columns="shop"/>
+      <exported-key name="shop" table="employees" schema="" catalog="study" columns="shop"/>
+    </table>
+    <table name="transformers" schema="" catalog="study" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="input_voltage" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="mass" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="output_current" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="output_voltage" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="price" sqlType="DECIMAL" precision="19" scale="2" nullable="true" jdbcType="3"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="users" schema="" catalog="study" type="TABLE">
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_login" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_description" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_is_admin" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+      <index name="user_id_UNIQUE" unique="true" columns="user_id"/>
+      <index name="user_login_UNIQUE" unique="true" columns="user_login"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="WebTransformersShop 0.2:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="WebTransformerShop.war">
+      <element id="artifact" artifact-name="WebTransformersShop 0.2:war exploded" />
+    </root>
+  </artifact>
+</component>
